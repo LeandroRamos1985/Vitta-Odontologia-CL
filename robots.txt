@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /SITE-QUALITY-REPORT.md
+Disallow: /thank-you.html
 
-Sitemap: https://drrealtyma.com/sitemap.xml
+Sitemap: https://vittaodontologia.github.io/sitemap.xml
