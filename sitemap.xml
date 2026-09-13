@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://vittaodontologia.github.io/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://vittaodontologia.github.io/privacy-policy.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
+  <url><loc>https://drrealtyma.com/</loc></url>
+  <url><loc>https://drrealtyma.com/privacy.html</loc></url>
+  <url><loc>https://drrealtyma.com/terms.html</loc></url>
+  <url><loc>https://drrealtyma.com/pt/</loc></url>
+  <url><loc>https://drrealtyma.com/pt/privacy.html</loc></url>
+  <url><loc>https://drrealtyma.com/pt/terms.html</loc></url>
+  <url><loc>https://drrealtyma.com/es/</loc></url>
+  <url><loc>https://drrealtyma.com/es/privacy.html</loc></url>
+  <url><loc>https://drrealtyma.com/es/terms.html</loc></url>
 </urlset>

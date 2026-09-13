@@ -1,0 +1,24 @@
+D&R Realty build QA — 2026-09-13
+
+Static HTML audit:
+- 13 HTML files
+- 0 structural errors
+- 0 duplicate IDs
+- 0 missing form labels
+- 0 broken internal links
+
+Local route HTTP tests: PASS
+- / 200
+- /pt/ 200
+- /es/ 200
+- /privacy.html 200
+- /pt/privacy.html 200
+- /es/privacy.html 200
+- /404.html 200
+- /robots.txt 200
+- /sitemap.xml 200
+
+Limitations:
+- Full visual browser screenshot audit could not be completed in this execution environment because the bundled Chromium process did not finish rendering external video/image resources.
+- Lighthouse/Core Web Vitals require hosted production-like deployment.
+- Form delivery/CRM/analytics require client endpoints/IDs.

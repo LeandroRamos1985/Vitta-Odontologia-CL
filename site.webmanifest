@@ -1,0 +1,9 @@
+{
+  "name": "D&R Realty",
+  "short_name": "D&R Realty",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111722",
+  "theme_color": "#111722",
+  "icons": []
+}
