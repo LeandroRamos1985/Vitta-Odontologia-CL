@@ -4,13 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vitta Odontologia Integrada | Brasília, Asa Norte — Implante, Invisalign e Prótese Protocolo</title>
-<meta name="description" content="Vitta Odontologia Integrada, em Brasília desde 2005. Implante, Invisalign e Prótese Protocolo com 5,0 estrelas e mais de 580 avaliações no Google. Agende sua avaliação no Liberty Mall, Asa Norte.">
+<meta name="description" content="Vitta Odontologia Integrada, em Brasília desde 2005. Implante, Invisalign e Prótese Protocolo — 5,0★ e 585 avaliações no Google. Liberty Mall, Asa Norte.">
 <link rel="canonical" href="https://vittaodontologia.github.io/">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://vittaodontologia.github.io/">
 <meta property="og:title" content="Vitta Odontologia Integrada | Brasília, Asa Norte">
 <meta property="og:description" content="A transformação do seu sorriso começa aqui. Implante, Invisalign e Prótese Protocolo — desde 2005, 5,0★ no Google.">
-<meta property="og:image" content="img/hero-poster.jpg">
+<meta property="og:image" content="https://vittaodontologia.github.io/img/hero-poster.jpg">
 <meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,10 +81,13 @@
   /* Header */
   header{
     position:fixed;top:0;left:0;right:0;z-index:100;
-    background:rgba(250,245,236,0.92);
-    backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
     transition:box-shadow .3s ease;
+  }
+  header::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:rgba(250,245,236,0.92);
+    backdrop-filter:blur(10px);
   }
   header.scrolled{box-shadow:0 8px 24px -16px rgba(28,20,13,0.25);}
   .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:84px;}
@@ -107,6 +112,7 @@
   }
   .btn-wine{background:var(--wine);color:var(--cream);}
   .btn-wine:hover{box-shadow:0 12px 24px -10px rgba(110,30,51,0.55);transform:translateY(-1px);}
+  .nav-cta-mobile{display:none;}
   .btn-outline{border-color:var(--ink);color:var(--ink);background:transparent;}
   .btn-outline:hover{background:var(--ink);color:var(--cream);}
   .btn-gold{background:var(--gold);color:var(--ink);}
@@ -288,12 +294,13 @@
     .hero-content > *{animation:none;opacity:1;transform:none;}
   }
 
-  @media (max-width: 980px){
+  @media (max-width: 1220px){
     nav.primary-nav{position:fixed;top:84px;left:0;right:0;bottom:0;background:var(--cream);
       flex-direction:column;justify-content:flex-start;padding:40px 28px;gap:26px;
       transform:translateX(100%);transition:transform .3s ease;}
     nav.primary-nav.open{transform:translateX(0);}
     nav.primary-nav a{font-size:18px;}
+    .nav-cta-mobile{display:inline-flex;}
     .menu-toggle{display:block;}
     .header-cta{display:none;}
     .about-grid,.services-grid,.ig-grid,.contact-grid{grid-template-columns:1fr;}
@@ -331,7 +338,7 @@
       <a href="#avaliacoes">Avaliações</a>
       <a href="#localizacao">Localização</a>
       <a href="#contato">Contato</a>
-      <a class="btn btn-wine" href="https://wa.me/5561992696820?text=Ol%C3%A1!%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Vitta%20Odontologia." target="_blank" rel="noopener" style="margin-top:10px;">Agendar avaliação</a>
+      <a class="btn btn-wine nav-cta-mobile" href="https://wa.me/5561992696820?text=Ol%C3%A1!%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Vitta%20Odontologia." target="_blank" rel="noopener" style="margin-top:10px;">Agendar avaliação</a>
     </nav>
     <a class="btn btn-wine header-cta" href="https://wa.me/5561992696820?text=Ol%C3%A1!%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Vitta%20Odontologia." target="_blank" rel="noopener">Agendar avaliação</a>
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="primaryNav">
@@ -346,10 +353,12 @@
   <section class="hero" aria-label="Abertura">
     <div class="hero-bg">
       <video class="hero-bg-blur" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.jpg" aria-hidden="true">
+        <source src="video/hero-vitta.webm" type="video/webm">
         <source src="video/hero-vitta.mp4" type="video/mp4">
       </video>
       <video class="hero-bg-sharp" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.jpg"
              aria-label="Vídeo real do interior da Vitta Odontologia Integrada, mostrando a recepção e o letreiro dourado da clínica">
+        <source src="video/hero-vitta.webm" type="video/webm">
         <source src="video/hero-vitta.mp4" type="video/mp4">
         Seu navegador não suporta vídeo em HTML5.
       </video>
@@ -377,7 +386,7 @@
     <div class="container about-grid">
       <div class="about-photo">
         <img src="img/sobre-clinica.jpg"
-             alt="Recepção da Vitta Odontologia Integrada, com parede de madeira ripada e logo dourado da clínica" loading="lazy" width="900" height="1600">
+             alt="Recepção da Vitta Odontologia Integrada, com parede de madeira ripada e logo dourado da clínica" loading="lazy" width="720" height="1280">
         <div class="frame-tag">Odontologia integrada: todas as especialidades sob o mesmo teto.</div>
       </div>
       <div class="about-copy">
