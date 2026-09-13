@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Vitta Odontologia Integrada | Brasília, Asa Norte">
 <meta property="og:description" content="A transformação do seu sorriso começa aqui. Implante, Invisalign e Prótese Protocolo — desde 2005, 5,0★ no Google.">
-<meta property="og:image" content="https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&w=1260&h=750&dpr=1">
+<meta property="og:image" content="img/hero-poster.jpg">
 <meta property="og:locale" content="pt_BR">
 <meta name="robots" content="index, follow">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -21,7 +21,7 @@
   "@context": "https://schema.org",
   "@type": "Dentist",
   "name": "Vitta Odontologia Integrada",
-  "image": "https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg",
+  "image": "https://vittaodontologia.github.io/img/hero-poster.jpg",
   "telephone": "+55 61 99269-6820",
   "address": {
     "@type": "PostalAddress",
@@ -117,14 +117,26 @@
   /* Hero */
   .hero{
     position:relative;min-height:100vh;display:flex;align-items:flex-end;
-    padding:160px 0 110px;overflow:hidden;
+    padding:160px 0 110px;overflow:hidden;background:var(--ink);
   }
   .hero-bg{position:absolute;inset:0;z-index:0;}
-  .hero-bg img{width:100%;height:100%;object-fit:cover;animation:kenburns 24s ease-in-out infinite alternate;}
-  @keyframes kenburns{from{transform:scale(1);}to{transform:scale(1.09);}}
+  .hero-bg-blur{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(38px) saturate(1.15) brightness(0.75);transform:scale(1.15);}
+  .hero-bg-sharp{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    height:112%;width:auto;max-width:none;
+    box-shadow:0 40px 90px -30px rgba(0,0,0,0.7);
+    border-radius:2px;
+  }
+  @media (min-aspect-ratio: 3/4){
+    .hero-bg-sharp{height:118%;}
+  }
+  @media (max-width: 720px){
+    .hero-bg-sharp{height:auto;width:100%;top:0;left:0;transform:none;border-radius:0;box-shadow:none;}
+    .hero-bg-blur{display:none;}
+  }
   .hero-bg::after{
     content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg, rgba(28,20,13,0.55) 0%, rgba(28,20,13,0.35) 45%, rgba(28,20,13,0.85) 100%);
+    background:linear-gradient(180deg, rgba(28,20,13,0.35) 0%, rgba(28,20,13,0.25) 45%, rgba(28,20,13,0.88) 100%);
   }
   .hero-content{position:relative;z-index:1;color:var(--cream);max-width:760px;}
   .eyebrow-badge{
@@ -273,7 +285,6 @@
   .hero-content .hero-meta{animation-delay:.6s;}
   @keyframes rise{to{opacity:1;transform:translateY(0);}}
   @media (prefers-reduced-motion: reduce){
-    .hero-bg img{animation:none;}
     .hero-content > *{animation:none;opacity:1;transform:none;}
   }
 
@@ -334,8 +345,14 @@
   <!-- HERO -->
   <section class="hero" aria-label="Abertura">
     <div class="hero-bg">
-      <img src="https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1"
-           alt="Dentista e paciente sorrindo durante consulta na Vitta Odontologia" loading="eager" fetchpriority="high">
+      <video class="hero-bg-blur" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.jpg" aria-hidden="true">
+        <source src="video/hero-vitta.mp4" type="video/mp4">
+      </video>
+      <video class="hero-bg-sharp" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.jpg"
+             aria-label="Vídeo real do interior da Vitta Odontologia Integrada, mostrando a recepção e o letreiro dourado da clínica">
+        <source src="video/hero-vitta.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo em HTML5.
+      </video>
     </div>
     <div class="container">
       <div class="hero-content">
@@ -359,8 +376,8 @@
   <section class="about" id="sobre">
     <div class="container about-grid">
       <div class="about-photo">
-        <img src="https://images.pexels.com/photos/3952136/pexels-photo-3952136.jpeg?auto=compress&cs=tinysrgb&w=900&h=1100&dpr=1"
-             alt="Equipe da Vitta Odontologia apresentando plano de tratamento a uma paciente" loading="lazy" width="900" height="1100">
+        <img src="img/sobre-clinica.jpg"
+             alt="Recepção da Vitta Odontologia Integrada, com parede de madeira ripada e logo dourado da clínica" loading="lazy" width="900" height="1600">
         <div class="frame-tag">Odontologia integrada: todas as especialidades sob o mesmo teto.</div>
       </div>
       <div class="about-copy">
@@ -607,6 +624,11 @@
 </footer>
 
 <script>
+  // Respeita prefers-reduced-motion pausando os vídeos do hero
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.hero-bg video').forEach(v => { v.pause(); v.removeAttribute('autoplay'); });
+  }
+
   // Header scroll state
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', () => {
